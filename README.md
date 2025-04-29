@@ -39,8 +39,16 @@ npm start    # ou yarn start
 Abra http://localhost:3000 no seu navegador para ver a aplicação rodando.
 
 ## 🖼 Demonstrações Visuais
-<p> <img src="/src/assets/img/pokedex1.png"> <img src="/src/assets/img/pokedex2.png"> <img src="/src/assets/img/pokedex3.png"> </p>
-🔗 Acesse a versão online: https://react-pokedex-eight-alpha.vercel.app/
+<p> 
+  <img src="/src/assets/Imagem1.png"> 
+  <img src="/src/assets/Imagem2.png"> 
+</p>
+
+
+
+
+### 🔗 Acesse a versão online: https://trabalho-web-blush.vercel.app/
+
 
 ## 📚 Conceitos Aprendidos
 - Durante o desenvolvimento, os seguintes tópicos foram explorados e aprimorados:
