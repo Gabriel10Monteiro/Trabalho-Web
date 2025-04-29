@@ -1,0 +1,281 @@
+:root {
+  --card_gray: #080808;
+  --lightest_gray: #8b8b8b;
+  --brand_dark: #4a4a4a;
+  --default_rgba: rgba(0, 0, 0, 0.05);
+
+  --normal: #a8a77a;
+  --fire: #ee8130;
+  --water: #6390f0;
+  --electric: #f7d02c;
+  --grass: #7ac74c;
+  --ice: #96d9d6;
+  --fighting: #c22e28;
+  --poison: #a33ea1;
+  --ground: #e2bf65;
+  --flying: #a98ff3;
+  --psychic: #f95587;
+  --bug: #a6b91a;
+  --rock: #b6a136;
+  --ghost: #735797;
+  --dragon: #6f35fc;
+  --dark: #705746;
+  --steel: #b7b7ce;
+  --fairy: #d685ad;
+}
+
+body {
+  background-color: #111010;
+  color: #333;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.container-card {
+  transition: all 0.5s ease;
+  background-color: var(--card_gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.container-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.container-card-img {
+  z-index: 2;
+}
+
+.pokemon-name {
+  font-size: 22px;
+  text-transform: capitalize;
+  color: #222;
+  text-align: center;
+  margin-top: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.pokemon-number {
+  margin-top: 4px;
+  color: var(--lightest_gray);
+  font-size: 14px;
+}
+
+.type-item {
+  width: 48%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* Gradiente por tipo (normal, fire, water, etc.) */
+[class*="container-"]::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-image: linear-gradient(45deg, var(--default_rgba) 0%, transparent 100%);
+  position: absolute;
+  top: 0;
+  left: 10px;
+  border-radius: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: all 1.5s ease;
+}
+
+.container-card:hover [class*="container-"]::after {
+  opacity: 0.2;
+}
+
+.section-title {
+  font-family: "Segoe UI", sans-serif;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding-left: 6px;
+  font-weight: 600;
+}
+
+.overview {
+  line-height: 28px;
+  font-size: 18px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.sword,
+.shield {
+  border: 2px dashed var(--brand_dark) !important;
+  border-radius: 100%;
+}
+
+.sword {
+  background-color: var(--fighting) !important;
+}
+
+.shield {
+  background-color: var(--water) !important;
+}
+
+.container-versions button {
+  background: none;
+  border: none;
+  width: 70px;
+  height: 40px;
+}
+
+.container-versions img {
+  width: 30px;
+}
+
+.container-info {
+  background-color: var(--card_gray);
+  padding: 14px 10px;
+  border-radius: 10px;
+}
+
+.info-item {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.info-item h4 {
+  font-size: 13px;
+  margin-bottom: 4px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.info-item p {
+  margin-bottom: 0;
+  text-transform: capitalize;
+  font-size: 15px;
+  color: #444;
+}
+
+.container-bar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--card_gray);
+  padding: 14px 12px;
+  border-radius: 10px;
+}
+
+.bar-item {
+  width: 100px;
+}
+
+.bar {
+  height: 200px;
+  background-color: #e0e0e0;
+  position: relative;
+  border-radius: 4px;
+}
+
+.bar-active {
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #4caf50;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.container-label {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.value {
+  color: #222;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.label {
+  font-family: "Segoe UI", sans-serif;
+  text-transform: capitalize;
+  font-size: 14px;
+  color: #444;
+}
+
+@media screen and (max-width: 998px) {
+  .label {
+    font-size: 10px;
+    max-width: 40px;
+  }
+
+  .bar-active,
+  .bar-item {
+    width: 40px;
+  }
+}
+
+.container-evolution {
+  background-color: var(--card_gray);
+  border-radius: 10px;
+  width: 100%;
+  padding: 14px 12px;
+}
+
+.evolution-item {
+  background-color: #0d0c0c;
+  padding: 20px 10px;
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.evolution-item figure {
+  margin: 0;
+}
+
+.evolution-item p {
+  margin-bottom: 0;
+}
+
+.evolution-img {
+  border-radius: 100%;
+  width: 150px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.container-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #ccc;
+}
+
+@media screen and (max-width: 767px) {
+  .evolution-item {
+    width: 100%;
+  }
+
+  .container-arrow {
+    transform: rotate(90deg);
+    margin: 20px 0;
+  }
+}
